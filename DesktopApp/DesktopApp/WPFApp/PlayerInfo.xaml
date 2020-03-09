@@ -1,0 +1,74 @@
+﻿<Window x:Class="WPFApp.PlayerInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+         xmlns:p="clr-namespace:WPFApp.Properties"
+        mc:Ignorable="d"
+        Title="PlayerInfo" Height="450" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+   
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Content="{x:Static p:Resources.Igrac }" Grid.Row="0" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Broj }" Grid.Row="1" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Slika }" Grid.Row="2" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Pozicija }" Grid.Row="3" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Kapetan }" Grid.Row="4" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Broj_zabijenih_golova }" Grid.Row="5" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+        <Button Content="{x:Static p:Resources.Broj_zutih_kartona }" Grid.Row="7" Grid.Column="0"
+               Style="{StaticResource lblTeamInfo}"/>
+       
+
+        <Label Grid.Row="0" Grid.Column="1"
+               Style="{StaticResource txtBox}"
+               Content="{Binding Path=Name}"/>
+        <Label Grid.Row="1" Grid.Column="1"
+               Style="{StaticResource txtBox}"
+               Content="{Binding Path=ShirtNumber}"/>
+        <Image  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left">
+            <Image.Source>
+                <BitmapImage UriSource="/Images/defaultPlayerImg.png"/>
+            </Image.Source>
+        </Image>
+               
+               
+        <Label Grid.Row="3" Grid.Column="1"
+               Style="{StaticResource txtBox}"
+               Content="{Binding Path=Position}"/>
+        <CheckBox Grid.Row="4" Grid.Column="1"
+               VerticalAlignment="Center"
+                  IsChecked="{Binding Path=Captain}"
+                  IsEnabled="False"
+               />
+        <Label Grid.Row="5" Grid.Column="1"
+               Style="{StaticResource txtBox}"
+               Content="{Binding Path=GoalsScored}"/>
+        <Label Grid.Row="6" Grid.Column="1"
+               Style="{StaticResource txtBox}"
+               Content="{Binding Path=NumOfYellowCards}"/>
+        
+
+
+    </Grid>
+</Window>
